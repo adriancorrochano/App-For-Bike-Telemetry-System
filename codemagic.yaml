@@ -1,0 +1,31 @@
+workflows:
+  ios-release-build:
+    name: iOS Release Build
+    max_build_duration: 60
+    environment:
+      flutter: stable
+      vars:
+        XCODE_SCHEME: "Runner"
+    scripts:
+      - name: Install Flutter dependencies
+        script: |
+          flutter pub get
+
+      - name: Build iOS release
+        script: |
+          flutter build ios --release --no-codesign
+
+    artifacts:
+      - build/ios/ipa/*.ipa
+      - build/ios/ipa/*.dSYM.zip
+      - build/ios/archive/*.xcarchive
+
+    publishing:
+      email:
+        recipients:
+          - "adr@email.com"
+
+    ios_signing:
+      distribution_type: development
+      bundle_identifier: com.example.flutterApp
+      team_id: YOUR_TEAM_ID_HERE
