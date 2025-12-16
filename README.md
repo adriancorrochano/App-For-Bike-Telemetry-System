@@ -101,10 +101,6 @@ The app expects MQTT telemetry data in JSON format with the following fields:
 - Customizable alerts and notifications
 - Offline data caching
 
-## License
-
-This project is open source and available under the MIT License.
-
 ## Support
 
 For issues, feature requests, or questions, please create an issue in this repository.
