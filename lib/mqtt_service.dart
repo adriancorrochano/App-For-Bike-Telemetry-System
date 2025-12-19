@@ -6,7 +6,7 @@ typedef TelemetryCallback = void Function(Map<String, dynamic>);
 
 class MqttService {
   final String host = "broker.hivemq.com";
-  final int port = 1883; // MQTT TCP (mobile only)
+  final int port = 1883; // MQTT TCP 
   final String topic = "portenta/bike/json";
 
   late MqttServerClient client;
